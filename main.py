@@ -10,7 +10,8 @@ class StockData:
         self.output_path = output_path
         self.end_date = datetime.today()
         self.start_date = datetime.today() - timedelta(days=1)
-        self.two_days_backdata = datetime.today() - timedelta(days=2)
+        number_of_days = int(input("enter the number of days to go back: "))
+        self.two_days_backdata = datetime.today() - timedelta(days=number_of_days)
 
     def get_stock_data(self):
         tickers = [f"{symbol}.NS" for symbol in self.symbols]
